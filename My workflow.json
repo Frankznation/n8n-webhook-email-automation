@@ -1,0 +1,69 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "project1-test",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ba27351d-8291-427a-bb4c-915a1e8b13ad",
+      "name": "Webhook",
+      "webhookId": "8b9ed5f4-7e6c-4792-b78b-f410212bcb9f"
+    },
+    {
+      "parameters": {
+        "sendTo": "obif66902@gmail.com",
+        "subject": "n8n Project 1 Success ✅",
+        "message": "Webhook triggered. Email sent from n8n.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "8ecb1ee1-103c-40dd-847a-5df43aeac1db",
+      "name": "Send a message",
+      "webhookId": "dd56e699-ef47-4f2e-86ad-0eaa9d50a569",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Jat9UQN6JcFj2cQs",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "d5228b26-3c6b-41e1-9955-07e8732a079b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "db567787b152c1412c162ff1bfbadb0fbf17793e6b4306dd25b2fcab373b5348"
+  },
+  "id": "jDLp6l4Qzo8Gghw5",
+  "tags": []
+}
